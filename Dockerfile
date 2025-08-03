@@ -1,4 +1,5 @@
-FROM python:3.10-slim-bullseye  # Changed from buster to bullseye
+FROM python:3.10-slim-bullseye  
+# Changed from buster to bullseye
 
 RUN apt-get update -y && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends gcc libffi-dev ffmpeg aria2 python3-pip \
