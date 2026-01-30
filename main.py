@@ -1129,7 +1129,7 @@ async def txt_handler(bot: Client, m: Message):
 
                 elif ".pdf" in url:
                     try:
-                        await asyncio.sleep(4)
+                        await asyncio.sleep(1)
         # Replace spaces with %20 in the URL
                         url = url.replace(" ", "%20")
  
@@ -1389,7 +1389,7 @@ async def txt_handler(bot: Client, m: Message):
 
                 elif ".pdf" in url:
                     try:
-                        await asyncio.sleep(4)
+                        await asyncio.sleep(1)
         # Replace spaces with %20 in the URL
                         url = url.replace(" ", "%20")
  
