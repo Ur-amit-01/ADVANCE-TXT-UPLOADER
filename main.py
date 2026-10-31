@@ -612,7 +612,7 @@ async def upload(bot: Client, m: Message):
             
             elif "/master.mpd" in url or "d1d34p8vz63oiq" in url or "parentId" in url or "childId" in url:
              id =  url.split("/")[-2]
-             url = f"https://anonymouspwplayer-554b25895c1a.herokuapp.com/pw?url={url}&token={raw_text4}"
+             url = f"https://anonymouspwplayeer-2038df9c1dbd.herokuapp.com/pw?url={url}&token={raw_text4}"
                 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {name1[:60]}'
