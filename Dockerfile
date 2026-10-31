@@ -1,17 +1,23 @@
-FROM python:3.10-slim-bullseye
 
+FROM python:3.10-slim-bookworm
 
 RUN apt-get update \
- && apt-get upgrade -y \
- && apt-get install -y --no-install-recommends gcc libffi-dev musl-dev ffmpeg aria2 python3-pip \
- && apt-get clean \
+ && apt-get install -y --no-install-recommends \
+    gcc \
+    libffi-dev \
+    musl-dev \
+    ffmpeg \
+    aria2 \
  && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /app
+
 COPY . /app/
-WORKDIR /app/
-RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
-RUN pip install pytube
+
+RUN pip install --no-cache-dir --upgrade pip \
+ && pip install --no-cache-dir -r requirements.txt \
+ && pip install --no-cache-dir pytube
+
 ENV COOKIES_FILE_PATH="youtube_cookies.txt"
-CMD gunicorn app:app & python3 main.py
 
-
+CMD ["sh", "-c", "gunicorn app:app & python3 main.py"]
